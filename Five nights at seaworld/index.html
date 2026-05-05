@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Five Nights at Sea World</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell" aria-label="Five Nights at Sea World browser game">
+      <section class="game-frame" id="gameFrame">
+        <div class="office-view" id="officeView">
+          <img class="office-bg" src="fna willem security room.png" alt="">
+          <div class="left-hall-warning" id="hallWarning"></div>
+          <img class="office-threat" id="officeThreat" src="willem fnaf1.png" alt="">
+          <img class="office-threat vent-office-threat" id="ventOfficeThreat" src="willem fnaf1.png" alt="">
+          <div class="screen-noise"></div>
+          <div class="vignette"></div>
+        </div>
+
+        <aside class="hud" aria-label="Night status">
+          <div>
+            <span class="hud-label">NIGHT</span>
+            <strong id="nightLabel">1</strong>
+          </div>
+          <div>
+            <span class="hud-label">TIME</span>
+            <strong id="timeLabel">12 AM</strong>
+          </div>
+          <div>
+            <span class="hud-label">SIGNAL</span>
+            <strong id="signalLabel">100%</strong>
+          </div>
+          <div>
+            <span class="hud-label">VENT</span>
+            <strong id="ventLabel">100%</strong>
+          </div>
+        </aside>
+
+        <div class="alert-bar" id="alertBar">System ready</div>
+
+        <button class="tablet-tab" id="tabletToggle" type="button" aria-label="Open security cameras">
+          CAMERAS
+        </button>
+
+        <section class="camera-panel" id="cameraPanel" aria-label="Security cameras">
+          <div class="camera-feed">
+            <img class="camera-image" id="cameraImage" src="five nights at willem backround image 1.jpg" alt="">
+            <img class="camera-threat sprite-threat" id="cameraThreat" src="assets/generated/willem-cam-1.png" alt="">
+            <img class="camera-threat sprite-threat vent-threat" id="ventThreat" src="assets/generated/willem-cam-1.png" alt="">
+            <div class="camera-static" id="cameraStatic"></div>
+            <div class="feed-title">
+              <span id="cameraName">CAM 01 - Docks</span>
+              <span id="cameraStatus">ONLINE</span>
+            </div>
+            <div class="feed-meta" id="feedMeta">No movement</div>
+          </div>
+
+          <div class="camera-side">
+            <div class="map" id="cameraMap" aria-label="Camera map"></div>
+            <div class="system-panel">
+              <button id="audioButton" type="button">Play Audio</button>
+              <button id="ventButton" type="button">Close Vent</button>
+              <button id="cameraModeButton" type="button">Vent Cams</button>
+              <button id="rebootButton" type="button">Reboot All</button>
+            </div>
+            <div class="system-readouts">
+              <p><span>Audio</span><meter id="audioMeter" min="0" max="100" value="100"></meter></p>
+              <p><span>Video</span><meter id="videoMeter" min="0" max="100" value="100"></meter></p>
+              <p><span>Airflow</span><meter id="airMeter" min="0" max="100" value="100"></meter></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="overlay start-overlay" id="startOverlay" aria-label="Start game">
+          <div class="title-block">
+            <div class="title-mark" aria-hidden="true">
+              <span>F</span>
+              <span>N</span>
+              <span>S</span>
+              <span>W</span>
+            </div>
+            <h1>Five Nights at Sea World</h1>
+            <input id="nightSelect" type="hidden" value="1">
+            <input id="threatSelect" type="hidden" value="normal">
+            <div class="menu-actions">
+              <button id="startButton" type="button">New Game</button>
+              <button id="continueButton" type="button">Continue</button>
+            </div>
+            <p class="progress-note" id="progressNote">No saved shift</p>
+          </div>
+        </section>
+
+        <section class="jumpscare-overlay is-hidden" id="jumpscareOverlay" aria-hidden="true">
+          <img class="jumpscare-sprite" id="jumpscareSprite" src="assets/generated/willem-jump-1.png" alt="">
+        </section>
+
+        <section class="overlay end-overlay is-hidden" id="endOverlay" aria-live="assertive">
+          <img id="endImage" src="fnaf willem lore.png" alt="">
+          <div class="end-copy">
+            <h2 id="endTitle">Shift complete</h2>
+            <p id="endText">You made it to 6 AM.</p>
+            <div class="end-actions">
+              <button id="restartButton" type="button">Replay Night</button>
+              <button id="nextButton" class="is-hidden" type="button">Next Night</button>
+              <button id="menuButton" type="button">Menu</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
